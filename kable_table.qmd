@@ -26,3 +26,5 @@ hbr_summary |>
   kable() |> 
   kable_styling(bootstrap_options = "striped")
 ```
+
+Done!
