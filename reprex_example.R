@@ -31,3 +31,5 @@ df<- tribble(~animal, ~sock_color,
         "Marmot", "yellow")
 
 df |> mutate(animal = str_to_lower(animal))
+
+

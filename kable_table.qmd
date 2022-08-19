@@ -1,0 +1,28 @@
+---
+title: "kable tables"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(lubridate)
+library(kableExtra)
+library(janitor)
+
+```
+
+create a summary table of mean maple seedling height grouped by watershed and year
+
+```{r}
+hbr_summary <- hbr_maples |> group_by(year, watershed) |> 
+  summarize(mean_height = mean(stem_length, na.rm = TRUE),
+            sd_height = sd(stem_length))
+```
+
+```{r}
+hbr_summary |> 
+  kable() |> 
+  kable_styling(bootstrap_options = "striped")
+```
